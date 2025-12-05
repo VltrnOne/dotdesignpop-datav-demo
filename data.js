@@ -1,12 +1,12 @@
 /**
- * Saint James Cooler Portfolio - JOB #6456
+ * DOT.DESIGNPOP - Asset Portfolio Demo
  * Data V - Powered by VLTRN
  *
  * SOURCE DATA (from Forecast Tracker):
- * - Fit Cooler (Bodega/C-Store Model): 79 units - SKU: SJ-FIT-001
- * - SC190L Hero (G10 EQ): 44 units - SKU: SJ-SC190L
- * - SC68L Hero (G1.5 Eq): 118 units - SKU: SJ-SC68L
- * - Slimline Cooler (Smaller G9 EQ): 180 units - SKU: SJ-SLIM-001
+ * - Fit Cooler (Bodega/C-Store Model): 79 units - SKU: DD-FIT-001
+ * - SC190L Hero (G10 EQ): 44 units - SKU: DD-SC190L
+ * - SC68L Hero (G1.5 Eq): 118 units - SKU: DD-SC68L
+ * - Slimline Cooler (Smaller G9 EQ): 180 units - SKU: DD-SLIM-001
  * - TOTAL: 421 units ordered for First Track distribution
  *
  * BUSINESS LOGIC:
@@ -30,7 +30,7 @@
 // ============================================================================
 const PRODUCTS = [
     {
-        sku: 'SJ-FIT-001',
+        sku: 'DD-FIT-001',
         name: 'Fit Cooler (Bodega/C-Store Model)',
         shortName: 'Fit Cooler',
         serialPrefix: 'FIT',
@@ -39,7 +39,7 @@ const PRODUCTS = [
         perPallet: 6
     },
     {
-        sku: 'SJ-SC190L',
+        sku: 'DD-SC190L',
         name: 'SC190L Hero (G10 EQ)',
         shortName: 'SC190L Hero',
         serialPrefix: '190L',
@@ -48,7 +48,7 @@ const PRODUCTS = [
         perPallet: 4
     },
     {
-        sku: 'SJ-SC68L',
+        sku: 'DD-SC68L',
         name: 'SC68L Hero (G1.5 Eq)',
         shortName: 'SC68L Hero',
         serialPrefix: '68L',
@@ -57,7 +57,7 @@ const PRODUCTS = [
         perPallet: 8
     },
     {
-        sku: 'SJ-SLIM-001',
+        sku: 'DD-SLIM-001',
         name: 'Slimline Cooler (Smaller G9 EQ)',
         shortName: 'Slimline Cooler',
         serialPrefix: 'SLIM',
@@ -167,7 +167,7 @@ const SERVICE_STATUS = {
 // HELPER FUNCTIONS
 // ============================================================================
 function generateSerialNumber(productPrefix, index) {
-    return `SJ-6456-${productPrefix}-${String(index).padStart(4, '0')}`;
+    return `DD-DEMO-${productPrefix}-${String(index).padStart(4, '0')}`;
 }
 
 function generateTrackingNumber(carrier, index) {
@@ -566,10 +566,10 @@ const DATA = {
 
     // SKU-based groupings
     bySku: {
-        'SJ-FIT-001': distributedUnits.all.filter(u => u.sku === 'SJ-FIT-001'),
-        'SJ-SC190L': distributedUnits.all.filter(u => u.sku === 'SJ-SC190L'),
-        'SJ-SC68L': distributedUnits.all.filter(u => u.sku === 'SJ-SC68L'),
-        'SJ-SLIM-001': distributedUnits.all.filter(u => u.sku === 'SJ-SLIM-001')
+        'DD-FIT-001': distributedUnits.all.filter(u => u.sku === 'DD-FIT-001'),
+        'DD-SC190L': distributedUnits.all.filter(u => u.sku === 'DD-SC190L'),
+        'DD-SC68L': distributedUnits.all.filter(u => u.sku === 'DD-SC68L'),
+        'DD-SLIM-001': distributedUnits.all.filter(u => u.sku === 'DD-SLIM-001')
     }
 };
 
@@ -876,7 +876,7 @@ const DASHBOARD = {
 // ============================================================================
 // CONSOLE LOG FOR VERIFICATION
 // ============================================================================
-console.log('Saint James Cooler Portfolio Data Loaded');
+console.log('DOT.DESIGNPOP Demo Data Loaded');
 console.log('Total Units:', DATA.summary.totalUnits);
 console.log('Pending Arrival:', DATA.summary.pendingArrival);
 console.log('Active Inventory:', DATA.summary.activeInventory);
